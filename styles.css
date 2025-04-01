@@ -72,19 +72,19 @@ li {
 .project-image {
   width: 100%;
   height: auto;
-  max-width: 300px;
+  max-width: 100%;
   border-radius: 10px;
 }
 
 .projects-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-items: center;
 }
 
 .projects-container .project {
-  width: 30%;
+  width: 100%;
 }
 
 /* Footer */
