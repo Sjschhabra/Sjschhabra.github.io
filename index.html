@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Sameerjeet Singh Chhabra - Robotics & Automation Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sameerjeet Singh Chhabra | Robotics & Automation Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
-  <div class="robot-cursor"></div>
-  <div class="particles-background"></div>
+  <!-- Space background with particles -->
+  <div id="particles-js" class="particles-background"></div>
   
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
       <div class="logo">SSC</div>
       <ul class="nav-links">
-        <li><a href="#projects">Projects</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#publications">Publications</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -34,16 +36,22 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <header id="home">
     <div class="container">
       <div class="profile-header">
-        <div class="profile-animation" id="robot-animation"></div>
-        <img src="assets/img/my_pic.jpg" alt="Sameerjeet Singh Chhabra" class="profile-pic reveal-left">
         <div class="profile-text">
           <h1 class="glitch" data-text="Sameerjeet Singh Chhabra">Sameerjeet Singh Chhabra</h1>
           <div class="tagline-container">
             <p class="tagline reveal-right">Robotics and Automation Engineer</p>
             <div class="animated-bar"></div>
+          </div>
+          <p class="intro-text">
+            Building intelligent systems that bridge the gap between theory and application.
+          </p>
+          <div class="header-cta">
+            <a href="#contact" class="primary-btn">Contact Me</a>
+            <a href="#projects" class="secondary-btn">View Projects</a>
           </div>
           <div class="tech-stack">
             <span class="tech-badge">Python</span>
@@ -51,6 +59,12 @@
             <span class="tech-badge">C++</span>
             <span class="tech-badge">Machine Learning</span>
             <span class="tech-badge">MATLAB</span>
+          </div>
+        </div>
+        <div class="profile-image">
+          <div class="image-container">
+            <div class="hexagon-border"></div>
+            <img src="assets/img/profile.jpg" alt="Sameerjeet Singh Chhabra" class="profile-pic reveal-left">
           </div>
         </div>
       </div>
@@ -62,277 +76,431 @@
       <div class="arrow">
         <span></span>
         <span></span>
-        <span></span>
       </div>
     </div>
   </header>
-
-  <main>
-    <!-- Featured Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <div class="section-line"></div>
-        </div>
-        
-        <div class="project-tabs">
-          <button class="tab-btn active" data-filter="all">All</button>
-          <button class="tab-btn" data-filter="robotics">Robotics</button>
-          <button class="tab-btn" data-filter="automation">Automation</button>
-          <button class="tab-btn" data-filter="ml">Machine Learning</button>
-        </div>
-        
-        <div class="projects-container">
-          <div class="project-card" data-category="robotics automation">
-            <div class="project-img-container">
-              <img src="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling/raw/main/Screenshot%202025-03-25%20152650.png" alt="Open-Seq-Me Project" class="project-image">
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling" target="_blank" class="project-link">GitHub</a>
-                  <a href="#" class="project-link project-details-btn">Details</a>
-                </div>
-              </div>
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm a <span class="highlight">Robotics and Automation Engineer</span> with a bachelor's degree in mechanical engineering and currently pursuing my master's in Robotics and Automation Engineering with a concentration in Systems Engineering at Arizona State University.</p>
+          
+          <p>My expertise lies in developing intelligent robotic systems, implementing computer vision solutions, and creating machine learning models for automation. I thrive in multidisciplinary environments where I can apply my technical knowledge to solve complex engineering challenges.</p>
+          
+          <p>Outside of my technical work, I enjoy participating in hackathons, mentoring junior engineers, and staying current with the latest advancements in robotics and AI. I'm passionate about creating technology that makes a positive impact on society.</p>
+          
+          <div class="personal-info">
+            <div class="info-item">
+              <span class="info-title">Email:</span>
+              <span class="info-detail">schhab18@asu.edu</span>
             </div>
-            <div class="project-info">
-              <h3>Open-Seq-Me: Automated Flow Cell Handling</h3>
-              <p>An automated robotic system for handling and processing flow cells in genomic sequencing applications.</p>
-              <div class="project-tech">
-                <span>ROS2</span>
-                <span>Python</span>
-                <span>Computer Vision</span>
-              </div>
+            <div class="info-item">
+              <span class="info-title">Phone:</span>
+              <span class="info-detail">602.884.2426</span>
+            </div>
+            <div class="info-item">
+              <span class="info-title">LinkedIn:</span>
+              <span class="info-detail"><a href="https://linkedin.com/in/sameerjeet-singh-chhabra-8616021a9" target="_blank">sameerjeet-singh-chhabra-8616021a9</a></span>
+            </div>
+            <div class="info-item">
+              <span class="info-title">GitHub:</span>
+              <span class="info-detail"><a href="https://github.com/sjschhabra" target="_blank">github.com/sjschhabra</a></span>
             </div>
           </div>
           
-          <div class="project-card" data-category="robotics ml">
-            <div class="project-img-container">
-              <img src="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm/raw/main/media/Screenshot%202025-04-01%20150444.png" alt="Maze Solving Robotic Arm" class="project-image">
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" target="_blank" class="project-link">GitHub</a>
-                  <a href="#" class="project-link project-details-btn">Details</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Maze Solving 6-DOF Robotic Arm</h3>
-              <p>A 6-DOF robotic arm that uses computer vision and path planning algorithms to solve physical mazes.</p>
-              <div class="project-tech">
-                <span>Inverse Kinematics</span>
-                <span>C++</span>
-                <span>Path Planning</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="project-card" data-category="robotics automation">
-            <div class="project-img-container">
-              <img src="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications/raw/main/Screenshot%202025-04-01%20151109.png" alt="Cable-Suspended Parallel Robot" class="project-image">
-              <div class="project-overlay">
-                <div class="project-links">
-                  <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" target="_blank" class="project-link">GitHub</a>
-                  <a href="#" class="project-link project-details-btn">Details</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-info">
-              <h3>Cable-Suspended Parallel Robot for Agriculture</h3>
-              <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications and field monitoring.</p>
-              <div class="project-tech">
-                <span>Parallel Robotics</span>
-                <span>MATLAB</span>
-                <span>Sensor Fusion</span>
-              </div>
-            </div>
+          <div class="download-resume">
+            <a href="#" class="download-btn">Download Resume <i class="download-icon"></i></a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About Me</h2>
-          <div class="section-line"></div>
-        </div>
-        
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              I'm a passionate <strong>Robotics and Automation Engineer</strong> with a focus on creating autonomous systems that solve real-world problems. My expertise spans across mechanical design, software development, and machine learning applications in robotics.
+  <!-- Education Section -->
+  <section id="education" class="education section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Education</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">MS</div>
+          </div>
+          <div class="timeline-content reveal-right">
+            <div class="timeline-date">2024 - 2026</div>
+            <h3 class="timeline-title">Master of Science in Robotics and Automation Engineering</h3>
+            <h4 class="timeline-subtitle">Arizona State University, USA</h4>
+            <p class="timeline-description">
+              Concentration in Systems Engineering<br>
+              GPA: 3.89/4.0
             </p>
-            <p>
-              With a background in Mechanical Engineering and advanced studies in Robotics and Systems Engineering, I blend theoretical knowledge with practical implementation to develop innovative solutions in the field of automation.
+            <div class="timeline-tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Systems Engineering</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">BTech</div>
+          </div>
+          <div class="timeline-content reveal-left">
+            <div class="timeline-date">2018 - 2022</div>
+            <h3 class="timeline-title">Bachelor of Technology in Mechanical Engineering</h3>
+            <h4 class="timeline-subtitle">Chhattisgarh Swami Vivekanand Technical University, India</h4>
+            <p class="timeline-description">
+              GPA: 8.73/10.00
             </p>
-            <div class="skills-container">
-              <h3>Technical Skills</h3>
-              <div class="skills-grid">
-                <div class="skill">
-                  <div class="skill-name">Python</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">ROS2</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">C++</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">Machine Learning</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">MATLAB</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <div class="skill-name">CAD/CAM</div>
-                  <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-visual">
-            <div id="robot-arm-animation"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-      <div class="container">
-        <div class="section-header">
-          <h2>Education</h2>
-          <div class="section-line"></div>
-        </div>
-        
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2024 - 2026</div>
-              <h3>Master of Science</h3>
-              <h4>Robotics and Automation Engineering; Systems Engineering Major</h4>
-              <p>Arizona State University, USA</p>
-              <p><strong>GPA:</strong> 3.89/4.0</p>
-              <p><strong>Graduation:</strong> May 2026 (Expected)</p>
-              <div class="edu-details">
-                <p>Key courses: Advanced Control Systems, Computer Vision for Robotics, Machine Learning for Autonomous Systems</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-date">2018 - 2022</div>
-              <h3>Bachelor of Technology</h3>
-              <h4>Mechanical Engineering</h4>
-              <p>Chhattisgarh Swami Vivekanand Technical University, India</p>
-              <p><strong>GPA:</strong> 8.73/10.00</p>
-              <p><strong>Graduation:</strong> July 2022</p>
-              <div class="edu-details">
-                <p>Senior Project: Design and implementation of an autonomous material handling robot</p>
-              </div>
+            <div class="timeline-tags">
+              <span class="tag">Mechanical Design</span>
+              <span class="tag">Robotics</span>
+              <span class="tag">Engineering Fundamentals</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-      <div class="container">
-        <div class="section-header">
-          <h2>Publications</h2>
-          <div class="section-line"></div>
+  <!-- Experience Section -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Professional Experience</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">ASU</div>
+          </div>
+          <div class="timeline-content reveal-right">
+            <div class="timeline-date">January 2025 - Present</div>
+            <h3 class="timeline-title">Teaching Aide</h3>
+            <h4 class="timeline-subtitle">Department of Physics, Arizona State University, Tempe AZ USA</h4>
+            <ul class="timeline-list">
+              <li>Manage 48 students, conduct physics labs, teach complex concepts, and oversee department inventory</li>
+              <li>Demonstrate advanced concepts in practical lab settings, enhancing student comprehension</li>
+              <li>Develop innovative approaches to explain challenging physics principles to undergraduate students</li>
+            </ul>
+          </div>
         </div>
         
-        <div class="publication-card">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">AI</div>
+          </div>
+          <div class="timeline-content reveal-left">
+            <div class="timeline-date">July 2023 - March 2024</div>
+            <h3 class="timeline-title">Data Scientist</h3>
+            <h4 class="timeline-subtitle">ANYTHINGAI Cyber Pvt. Ltd, Hyderabad, India</h4>
+            <ul class="timeline-list">
+              <li>Streamlined Data Extraction: Cut down web data extraction time by 98% leveraging Selenium, BeautifulSoup, and APIs</li>
+              <li>Data Analysis and Insights: Analyzed data from 10+ decentralized exchanges. Improved predictive accuracy using AutoGens</li>
+              <li>Trading Bot: Launched ML-powered trading bot on AWS, refining strategies with real-time processing and boosting profit probability by 4x</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+      </div>
+      
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-categories="robotics automation">
+          <div class="project-image">
+            <img src="assets/img/projects/blimp.jpg" alt="Autonomous Blimp">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link view-details" data-project="blimp">View Details</a>
+                <a href="#" class="project-link" target="_blank">View Demo</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Autonomous Blimp</h3>
+            <p>Design and fabrication of an autonomous airship with Raspberry Pi and LiDAR for 3D movement.</p>
+            <div class="project-tags">
+              <span class="tag">Raspberry Pi</span>
+              <span class="tag">LiDAR</span>
+              <span class="tag">Autonomous Navigation</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card" data-categories="robotics ml">
+          <div class="project-image">
+            <img src="assets/img/projects/maze-arm.jpg" alt="Maze Solving Robotic Arm">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link view-details" data-project="maze-arm">View Details</a>
+                <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" class="project-link" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Maze Solving 6-DOF Robotic Arm</h3>
+            <p>A 6-DOF robotic arm that uses computer vision and path planning algorithms to solve physical mazes.</p>
+            <div class="project-tags">
+              <span class="tag">Inverse Kinematics</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Path Planning</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card" data-categories="robotics automation">
+          <div class="project-image">
+            <img src="assets/img/projects/cable-robot.jpg" alt="Cable-Suspended Parallel Robot">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link view-details" data-project="cable-robot">View Details</a>
+                <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Cable-Suspended Parallel Robot</h3>
+            <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications.</p>
+            <div class="project-tags">
+              <span class="tag">Parallel Robotics</span>
+              <span class="tag">Agriculture</span>
+              <span class="tag">Precision Control</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project-card" data-categories="automation ml">
+          <div class="project-image">
+            <img src="assets/img/projects/open-seq-me.jpg" alt="Open-Seq-Me Project">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link view-details" data-project="open-seq-me">View Details</a>
+                <a href="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling" class="project-link" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Open-Seq-Me: Automated Flow Cell Handling</h3>
+            <p>2nd Place @ Pu Automations Hackathon 2025. An automated system for sequencing device handling.</p>
+            <div class="project-tags">
+              <span class="tag">ROS2</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Hackathon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <!-- Content will be dynamically added here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="publications section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="publications-list">
+        <div class="publication-item">
           <div class="publication-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7 7H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M7 17H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <i class="publication-icon-img"></i>
           </div>
           <div class="publication-content">
-            <h3>Design and Inverse Kinematics Analysis of Cable-Suspended Parallel Robot 'FarmPet' for Agricultural Application</h3>
-            <p class="publication-meta">International Journal for Research in Applied Science & Engineering Technology (IJRASET) - February 2023</p>
-            <p class="publication-abstract">This paper presents the design and kinematic analysis of a novel cable-suspended parallel robot named 'FarmPet' specifically designed for precision agriculture applications. The research focuses on addressing the challenges of large workspace coverage, payload capacity, and energy efficiency in agricultural automation.</p>
+            <h3 class="publication-title">Design and Inverse Kinematics Analysis of Cable-Suspended Parallel Robot FarmPet for Agricultural Application</h3>
+            <p class="publication-journal">International Journal for Research in Applied Science & Engineering Technology (IJRASET)</p>
+            <p class="publication-date">February 2023</p>
+            <p class="publication-abstract">
+              This paper presents the design and kinematic analysis of a novel cable-suspended parallel robot for agricultural applications.
+              The proposed system offers high precision at low cost, making advanced farming techniques accessible to small-scale farmers.
+            </p>
             <div class="publication-links">
-              <a href="#" class="btn btn-outline">View Paper</a>
-              <a href="#" class="btn btn-outline">Cite</a>
+              <a href="#" class="publication-link" target="_blank">View Paper</a>
+              <a href="#" class="publication-link" target="_blank">View Citation</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-    <section id="experience" class="experience">
-      <div class="container">
-        <div class="section-header">
-          <h2>Professional Experience</h2>
-          <div class="section-line"></div>
+    </div>
+  </section>
+  <!-- Skills Section -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Skills & Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="skills-categories">
+        <div class="skill-category">
+          <h3>Programming & Development</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-python"></i></div>
+              <div class="skill-info">
+                <h4>Python</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-cpp"></i></div>
+              <div class="skill-info">
+                <h4>C++</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-matlab"></i></div>
+              <div class="skill-info">
+                <h4>MATLAB</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-ros"></i></div>
+              <div class="skill-info">
+                <h4>ROS/ROS2</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         
-        <div class="experience-grid">
-          <div class="experience-card">
-            <div class="experience-header">
-              <div class="experience-date">January 2025 - Present</div>
-              <h3>Teaching Aide</h3>
-              <h4>Department of Physics, ASU Tempe</h4>
+        <div class="skill-category">
+          <h3>Robotics & AI</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-cv"></i></div>
+              <div class="skill-info">
+                <h4>Computer Vision</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
             </div>
-            <div class="experience-content">
-              <ul class="experience-list">
-                <li>Manage 48 students across multiple lab sections, ensuring proper understanding of physics concepts and experimental procedures</li>
-                <li>Conduct physics labs focusing on mechanics, electromagnetism, and optics with hands-on demonstrations</li>
-                <li>Teach complex theoretical concepts through practical demonstrations and interactive learning methods</li>
-                <li>Maintain and oversee department inventory of laboratory equipment and experimental setups</li>
-              </ul>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-ml"></i></div>
+              <div class="skill-info">
+                <h4>Machine Learning</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-robotics"></i></div>
+              <div class="skill-info">
+                <h4>Robotic Systems</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-control"></i></div>
+              <div class="skill-info">
+                <h4>Control Systems</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="80"></div>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <div class="experience-card">
-            <div class="experience-header">
-              <div class="experience-date">July 2023 - March 2024</div>
-              <h3>Data Scientist</h3>
-              <h4>ANYTHINGAI Cyber Pvt. Ltd., Hyderabad, India</h4>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Tools & Technologies</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-git"></i></div>
+              <div class="skill-info">
+                <h4>Git & GitHub</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
             </div>
-            <div class="experience-content">
-              <ul class="experience-list">
-                <li>Streamlined web data extraction processes using Selenium, BeautifulSoup, and APIs—reducing extraction time by 98%</li>
-                <li>Developed and deployed an ML-powered trading bot on AWS infrastructure, with continuous optimization of trading strategies</li>
-                <li>Implemented advanced data processing pipelines that increased trading frequency by 30× while maintaining performance</li>
-                <li>Created interactive dashboards for real-time performance monitoring and strategy evaluation</li>
-              </ul>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-solidworks"></i></div>
+              <div class="skill-info">
+                <h4>SolidWorks</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-arduino"></i></div>
+              <div class="skill-info">
+                <h4>Arduino</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-raspi"></i></div>
+              <div class="skill-info">
+                <h4>Raspberry Pi</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <section id="contact" class="contact">
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
     <div class="container">
       <div class="section-header">
         <h2>Get In Touch</h2>
@@ -342,266 +510,99 @@
       <div class="contact-content">
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="contact-text">
+            <div class="contact-icon"><i class="contact-email"></i></div>
+            <div class="contact-detail">
               <h3>Email</h3>
-              <a href="mailto:schhab18@asu.edu">schhab18@asu.edu</a>
+              <p><a href="mailto:schhab18@asu.edu">schhab18@asu.edu</a></p>
             </div>
           </div>
           
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 8C16 10.21 14.21 12 12 12C9.79 12 8 10.21 8 8C8 5.79 9.79 4 12 4C14.21 4 16 5.79 16 8ZM4 18C4 15.34 9.33 14 12 14C14.67 14 20 15.34 20 18V20H4V18Z" fill="currentColor"/>
-              </svg>
-            </div>
-            <div class="contact-text">
-              <h3>LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/sameerjeet-singh-chhabra-8616021a9" target="_blank">Sameerjeet Singh Chhabra</a>
+            <div class="contact-icon"><i class="contact-phone"></i></div>
+            <div class="contact-detail">
+              <h3>Phone</h3>
+              <p><a href="tel:+16028842426">602.884.2426</a></p>
             </div>
           </div>
           
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z" fill="currentColor"/>
-              </svg>
+            <div class="contact-icon"><i class="contact-location"></i></div>
+            <div class="contact-detail">
+              <h3>Location</h3>
+              <p>Tempe, Arizona, USA</p>
             </div>
-            <div class="contact-text">
-              <h3>GitHub</h3>
-              <a href="https://github.com/Sjschhabra" target="_blank">Sjschhabra</a>
+          </div>
+          
+          <div class="contact-social">
+            <h3>Connect With Me</h3>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/sameerjeet-singh-chhabra-8616021a9" target="_blank" class="social-link"><i class="social-linkedin"></i></a>
+              <a href="https://github.com/sjschhabra" target="_blank" class="social-link"><i class="social-github"></i></a>
+              <a href="#" target="_blank" class="social-link"><i class="social-twitter"></i></a>
             </div>
           </div>
         </div>
         
         <div class="contact-form">
-          <form id="contact-form">
+          <form id="contactForm">
             <div class="form-group">
-              <input type="text" id="name" name="name" placeholder="Your Name" required>
               <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
             </div>
+            
             <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Your Email" required>
               <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
+            
             <div class="form-group">
-              <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-              <label for="message">Your Message</label>
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
             </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Send Message</button>
           </form>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="footer-logo">
           <div class="logo">SSC</div>
           <p>Robotics & Automation Engineer</p>
         </div>
-        <div class="footer-links">
-          <a href="#home">Home</a>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+        
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
         </div>
       </div>
+      
       <div class="footer-bottom">
         <p>&copy; 2025 Sameerjeet Singh Chhabra. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Project Details Modal -->
-  <div class="modal" id="project-modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">
+    <span class="arrow-up"></span>
+  </button>
 
-  <script src="main.js"></script>
-  <script>
-    // ScrollReveal Animations
-    ScrollReveal().reveal('.section-header', {
-      origin: 'bottom',
-      distance: '30px',
-      duration: 1000,
-      delay: 300,
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
-      reset: false
-    });
-
-    ScrollReveal().reveal('.project-card', {
-      origin: 'bottom',
-      distance: '50px',
-      duration: 800,
-      interval: 200,
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
-      reset: false
-    });
-
-    ScrollReveal().reveal('.reveal-left', {
-      origin: 'left',
-      distance: '100px',
-      duration: 1000,
-      delay: 300,
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
-      reset: false
-    });
-
-    ScrollReveal().reveal('.reveal-right', {
-      origin: 'right',
-      distance: '100px',
-      duration: 1000,
-      delay: 500,
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
-      reset: false
-    });
-
-    // Hamburger Menu
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    // Project Filter Functionality
-    const filterButtons = document.querySelectorAll('.tab-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
-        button.classList.add('active');
-        
-        const filterValue = button.getAttribute('data-filter');
-        
-        projectCards.forEach(card => {
-          if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Project Modal
-    const modal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('modal-body');
-    const detailButtons = document.querySelectorAll('.project-details-btn');
-    const closeModal = document.querySelector('.close-modal');
-    
-    detailButtons.forEach(button => {
-      button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const projectCard = button.closest('.project-card');
-        const projectTitle = projectCard.querySelector('h3').textContent;
-        const projectImage = projectCard.querySelector('.project-image').src;
-        const projectDesc = projectCard.querySelector('.project-info p').textContent;
-        
-        // Create modal content
-        modalBody.innerHTML = `
-          <h2>${projectTitle}</h2>
-          <img src="${projectImage}" alt="${projectTitle}" class="modal-image">
-          <p class="modal-description">${projectDesc}</p>
-          <div class="modal-tech">
-            ${projectCard.querySelector('.project-tech').innerHTML}
-          </div>
-          <div class="modal-links">
-            <a href="${projectCard.querySelector('a').href}" target="_blank" class="btn btn-primary">View on GitHub</a>
-          </div>
-        `;
-        
-        modal.style.display = 'flex';
-      });
-    });
-    
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-    
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-
-    // Initialize Lottie animations
-    document.addEventListener('DOMContentLoaded', () => {
-      // Robot animation in header
-      lottie.loadAnimation({
-        container: document.getElementById('robot-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'https://assets5.lottiefiles.com/packages/lf20_tegmaqvl.json' // Robot animation
-      });
-      
-      // Robot arm animation in about section
-      lottie.loadAnimation({
-        container: document.getElementById('robot-arm-animation'),
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: 'https://assets3.lottiefiles.com/packages/lf20_pkioarva.json' // Robot arm animation
-      });
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: 'smooth'
-          });
-          
-          // Close mobile menu if open
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-        }
-      });
-    });
-
-    // Robot cursor effect
-    const cursor = document.querySelector('.robot-cursor');
-    
-    document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    });
-    
-    // Form submission handling
-    const contactForm = document.getElementById('contact-form');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Form submission logic would go here
-      contactForm.reset();
-      alert('Thanks for your message! I will get back to you soon.');
-    });
-  </script>
+  <!-- JS Scripts -->
+  <script src="js/main.js"></script>
 </body>
 </html>
