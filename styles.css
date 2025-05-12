@@ -309,15 +309,11 @@ header {
   height: 200px;
 }
 
-/* Rotating Hexagon Border */
 .hexagon-border {
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-  clip-path: polygon(
-    50% 0%, 93% 25%, 93% 75%,
-    50% 100%, 7% 75%, 7% 25%
-  );
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -326,11 +322,11 @@ header {
   z-index: 1;
 }
 
+
 @keyframes rotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
-
 
 
 .profile-pic {
@@ -345,8 +341,6 @@ header {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
-
 
 
 .scroll-indicator {
