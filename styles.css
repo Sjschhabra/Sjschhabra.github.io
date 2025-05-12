@@ -302,29 +302,36 @@ header {
   text-align: center;
 }
 
+
 .image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
+  width: 200px;
+  height: 200px;
 }
 
+/* Rotating Hexagon Border */
 .hexagon-border {
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  clip-path: polygon(
+    50% 0%, 93% 25%, 93% 75%,
+    50% 100%, 7% 75%, 7% 25%
+  );
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   animation: rotate 12s linear infinite;
   z-index: 1;
 }
+
 @keyframes rotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+/* Circular Profile Image */
 .profile-pic {
   width: 80%;
   height: 80%;
