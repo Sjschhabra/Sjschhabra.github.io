@@ -302,13 +302,14 @@ header {
   text-align: center;
 }
 
-
 .image-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 300px;  /* increased size */
+  height: 300px;
+  margin: auto;
 }
 
+/* Rotating Hexagon */
 .hexagon-border {
   width: 100%;
   height: 100%;
@@ -317,24 +318,24 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(0deg); /* reset on base */
   animation: rotate 12s linear infinite;
   z-index: 1;
 }
 
-
+/* Rotation animation */
 @keyframes rotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-
+/* Profile Picture (circular, on top of hexagon) */
 .profile-pic {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid white;
+  border: 5px solid white;
   position: absolute;
   top: 50%;
   left: 50%;
