@@ -195,63 +195,28 @@ header {
 .profile-text h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #f5f5f5, #a5b4fc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
+  color: var(--light-text);
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  position: static;
 }
+
+
 
 .glitch {
   position: relative;
 }
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.glitch {
+  position: relative;
+  font-size: 3.5rem;
   background: linear-gradient(to right, #f5f5f5, #a5b4fc);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.glitch::before {
-  left: 2px;
-  text-shadow: -1px 0 red;
-  animation: glitch-animation 2s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  left: -2px;
-  text-shadow: -1px 0 blue;
-  animation: glitch-animation 3s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-animation {
-  0% {
-    clip-path: inset(20% 0 30% 0);
-  }
-  20% {
-    clip-path: inset(65% 0 36% 0);
-  }
-  40% {
-    clip-path: inset(43% 0 25% 0);
-  }
-  60% {
-    clip-path: inset(10% 0 61% 0);
-  }
-  80% {
-    clip-path: inset(30% 0 96% 0);
-  }
-  100% {
-    clip-path: inset(62% 0 67% 0);
-  }
-}
 
 .tagline-container {
   display: flex;
@@ -339,38 +304,38 @@ header {
 
 .image-container {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
 }
 
 .hexagon-border {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 106%;
-  height: 106%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-  animation: rotate 10s linear infinite;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: rotate 12s linear infinite;
+  z-index: 1;
 }
-
 @keyframes rotate {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .profile-pic {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
   object-fit: cover;
-  clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
+
 
 .scroll-indicator {
   position: absolute;

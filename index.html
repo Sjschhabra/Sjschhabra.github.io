@@ -64,7 +64,7 @@
         <div class="profile-image">
           <div class="image-container">
             <div class="hexagon-border"></div>
-            <img src="assets/img/profile.jpg" alt="Sameerjeet Singh Chhabra" class="profile-pic reveal-left">
+            <img src="assets/img/my_pic.jpeg" alt="Sameerjeet Singh Chhabra" class="profile-pic reveal-left">
           </div>
         </div>
       </div>
@@ -214,122 +214,158 @@
       </div>
     </div>
   </section>
-  <!-- Projects Section -->
-  <section id="projects" class="projects section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Featured Projects</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="robotics">Robotics</button>
-        <button class="filter-btn" data-filter="automation">Automation</button>
-        <button class="filter-btn" data-filter="ml">Machine Learning</button>
-      </div>
-      
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card" data-categories="robotics automation">
-          <div class="project-image">
-            <img src="assets/img/projects/blimp.jpg" alt="Autonomous Blimp">
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="#" class="project-link view-details" data-project="blimp">View Details</a>
-                <a href="#" class="project-link" target="_blank">View Demo</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Autonomous Blimp</h3>
-            <p>Design and fabrication of an autonomous airship with Raspberry Pi and LiDAR for 3D movement.</p>
-            <div class="project-tags">
-              <span class="tag">Raspberry Pi</span>
-              <span class="tag">LiDAR</span>
-              <span class="tag">Autonomous Navigation</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="project-card" data-categories="robotics ml">
-          <div class="project-image">
-            <img src="assets/img/projects/maze-arm.jpg" alt="Maze Solving Robotic Arm">
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="#" class="project-link view-details" data-project="maze-arm">View Details</a>
-                <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" class="project-link" target="_blank">GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Maze Solving 6-DOF Robotic Arm</h3>
-            <p>A 6-DOF robotic arm that uses computer vision and path planning algorithms to solve physical mazes.</p>
-            <div class="project-tags">
-              <span class="tag">Inverse Kinematics</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Path Planning</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="project-card" data-categories="robotics automation">
-          <div class="project-image">
-            <img src="assets/img/projects/cable-robot.jpg" alt="Cable-Suspended Parallel Robot">
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="#" class="project-link view-details" data-project="cable-robot">View Details</a>
-                <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Cable-Suspended Parallel Robot</h3>
-            <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications.</p>
-            <div class="project-tags">
-              <span class="tag">Parallel Robotics</span>
-              <span class="tag">Agriculture</span>
-              <span class="tag">Precision Control</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="project-card" data-categories="automation ml">
-          <div class="project-image">
-            <img src="assets/img/projects/open-seq-me.jpg" alt="Open-Seq-Me Project">
-            <div class="project-overlay">
-              <div class="project-links">
-                <a href="#" class="project-link view-details" data-project="open-seq-me">View Details</a>
-                <a href="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling" class="project-link" target="_blank">GitHub</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Open-Seq-Me: Automated Flow Cell Handling</h3>
-            <p>2nd Place @ Pu Automations Hackathon 2025. An automated system for sequencing device handling.</p>
-            <div class="project-tags">
-              <span class="tag">ROS2</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Hackathon</span>
-            </div>
-          </div>
-        </div>
-      </div>
+ <!-- Projects Section -->
+ <section id="projects" class="projects section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <div class="section-line"></div>
     </div>
-    
-    <!-- Project Modal -->
-    <div class="project-modal" id="project-modal">
-      <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-          <!-- Content will be dynamically added here -->
-        </div>
-      </div>
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="robotics">Robotics</button>
+      <button class="filter-btn" data-filter="automation">Automation</button>
+      <button class="filter-btn" data-filter="ml">Machine Learning</button>
     </div>
-  </section>
+    <div class="projects-grid">
+
+      <!-- Project Cards -->
+      
+<!-- Project 1 -->
+<div class="project-card" data-categories="robotics automation">
+<div class="project-image">
+  <img src="images/LineTracking.png" alt="UAV Line Tracking">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/UAV-Dynamic-Landing-Line-Tracking" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com/watch?v=YCd7i0CGpko" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>UAV Dynamic Landing - Line Tracking</h3>
+  <p>Dynamic vision-based UAV landing system using real-time line tracking.</p>
+  <div class="project-tags">
+    <span class="tag">Drone</span>
+    <span class="tag">Computer Vision</span>
+    <span class="tag">ROS</span>
+  </div>
+</div>
+</div>
+
+<!-- Project 2 -->
+<div class="project-card" data-categories="robotics automation">
+<div class="project-image">
+  <img src="images/Voice-Operated-Mobile-Manipulator-Turtlebot-Mycobot.png" alt="Voice Operated Robot">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com/shorts/IgkybFqdJZs" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>Voice Operated Mobile Manipulator</h3>
+  <p>Voice-controlled integration of TurtleBot and MyCobot for intelligent mobile manipulation.</p>
+  <div class="project-tags">
+    <span class="tag">Voice Control</span>
+    <span class="tag">ROS</span>
+    <span class="tag">Turtlebot</span>
+  </div>
+</div>
+</div>
+
+<!-- Project 3 -->
+<div class="project-card" data-categories="robotics automation">
+<div class="project-image">
+  <img src="images/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications.png" alt="Cable Robot">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com/watch?v=ES8Zl3j1rvY" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>Cable-Suspended Parallel Robot</h3>
+  <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications.</p>
+  <div class="project-tags">
+    <span class="tag">Precision Farming</span>
+    <span class="tag">Parallel Robotics</span>
+  </div>
+</div>
+</div>
+
+<!-- Project 4 -->
+<div class="project-card" data-categories="robotics ml">
+<div class="project-image">
+  <img src="images/Maze-Solving-6-DOF-Robotic-Arm.png" alt="Maze Solving Robot Arm">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com/watch?v=8pNSNreSBco" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>Maze Solving 6-DOF Robotic Arm</h3>
+  <p>Autonomous robotic arm using IK and CV to solve physical mazes.</p>
+  <div class="project-tags">
+    <span class="tag">6-DOF</span>
+    <span class="tag">Path Planning</span>
+    <span class="tag">Inverse Kinematics</span>
+  </div>
+</div>
+</div>
+
+<!-- Project 5 -->
+<div class="project-card" data-categories="automation ml">
+<div class="project-image">
+  <img src="images/Open-Seq-Me: Automated Flow Cell Handling.png" alt="Open Seq Me">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com/watch?v=t-1RJgOwyxU" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>Open-Seq-Me: Automated Flow Cell Handling</h3>
+  <p>Hackathon-winning automation project for handling sequencing devices.</p>
+  <div class="project-tags">
+    <span class="tag">Automation</span>
+    <span class="tag">Hackathon</span>
+    <span class="tag">Open Source</span>
+  </div>
+</div>
+</div>
+
+<!-- Project 6 -->
+<div class="project-card" data-categories="ml">
+<div class="project-image">
+  <img src="images/Human Activity Recognition using Smartphones - Machine Learning.png" alt="Activity Recognition">
+  <div class="project-overlay">
+    <div class="project-links">
+      <a href="https://github.com/Sjschhabra/Activity-Recognition-ML" class="project-link" target="_blank">GitHub</a>
+      <a href="https://www.youtube.com" class="project-link" target="_blank">YouTube</a>
+    </div>
+  </div>
+</div>
+<div class="project-info">
+  <h3>Human Activity Recognition</h3>
+  <p>Smartphone sensor-based classification of human physical activities using ML.</p>
+  <div class="project-tags">
+    <span class="tag">Sensors</span>
+    <span class="tag">ML</span>
+    <span class="tag">Classification</span>
+  </div>
+</div>
+</div>
+
+
+    </div>
+  </div>
+</section>
 
   <!-- Publications Section -->
   <section id="publications" class="publications section">
