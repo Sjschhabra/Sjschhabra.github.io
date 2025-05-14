@@ -339,7 +339,7 @@ header {
   position: absolute;
   top: 20%;
   left: 20%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -60%);
   z-index: 2;
 }
 
