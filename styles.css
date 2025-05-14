@@ -304,8 +304,8 @@ header {
 
 .image-container {
   position: relative;
-  width: 300px;  /* increased size */
-  height: 300px;
+  width: 500px;  /* increased size */
+  height: 500px;
   margin: auto;
 }
 
@@ -331,8 +331,8 @@ header {
 
 /* Profile Picture (circular, on top of hexagon) */
 .profile-pic {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid white;
