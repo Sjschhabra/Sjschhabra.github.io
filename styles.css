@@ -331,14 +331,14 @@ header {
 
 /* Profile Picture (circular, on top of hexagon) */
 .profile-pic {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   object-fit: cover;
   border-radius: 50%;
   border: 5px solid white;
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 10%;
+  left: 10%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
