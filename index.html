@@ -5,162 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>SSC | Sameerjeet Singh Chhabra</title>
+  <!-- Favicon for browser tab -->
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Sjschhabra/Sjschhabra.github.io/refs/heads/main/images/Sameerjeet%20SIngh%20CHhabra%20(1)%20new.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
   <style>
-    /* Global Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: #0a0a0a;
-      color: white;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Container for maximum space utilization */
-    .container {
-      max-width: 100%;
-      width: 100%;
-      padding: 0 2vw; /* Responsive padding based on viewport width */
-    }
-
-    .container-wide {
-      max-width: 100%;
-      width: 100%;
-      padding: 0 1vw;
-    }
-
-    /* Particles Background - Matching Theme */
-    .particles-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-    }
-
-    /* Enhanced Navigation Bar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      padding: 12px 0;
-      background: rgba(10, 10, 10, 0.15);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border-bottom: 1px solid rgba(94, 91, 255, 0.15);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .navbar.scrolled {
-      background: rgba(10, 10, 10, 0.85);
-      backdrop-filter: blur(35px);
-      border-bottom-color: rgba(94, 91, 255, 0.3);
-    }
-
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 3vw;
-    }
-
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #5e5bff, #00d4ff, #5e5bff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 200% 200%;
-      animation: gradientShift 4s ease infinite;
-    }
-
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2.5vw;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-links a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      padding: 8px 0;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #5e5bff, #00d4ff);
-      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .nav-links a:hover {
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 4px;
-      padding: 8px;
-    }
-
-    .hamburger span {
-      width: 28px;
-      height: 3px;
-      background: linear-gradient(90deg, #5e5bff, #00d4ff);
-      transition: all 0.3s ease;
-      border-radius: 3px;
-    }
-
-    /* Hero Section - Full Width Layout */
+    /* Custom styles for background image and reduced gaps */
     #home {
       position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
       overflow: hidden;
-      padding: 100px 0 40px 0;
     }
 
     .hero-background {
@@ -172,6 +30,10 @@
       z-index: -1;
     }
 
+    .profile-image {
+      margin-left: 60px;
+    }
+
     .hero-background img {
       width: calc(100% - 40px);
       height: calc(100% - 40px);
@@ -179,496 +41,45 @@
       object-position: center;
       margin: 20px;
       border-radius: 20px;
-      opacity: 0.4;
+      opacity: 0.5;
       filter: blur(3px);
     }
 
-    .profile-header {
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 8vw;
-      align-items: center;
-      width: 100%;
-      padding: 0 3vw;
-      min-height: 80vh;
-    }
-
-    .profile-text {
-      justify-self: start;
-      max-width: none;
-      padding-right: 2vw;
-    }
-
-    .profile-text h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #ffffff, #5e5bff, #00d4ff, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      background-size: 300% 300%;
-      animation: textGradient 6s ease infinite;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-
-    @keyframes textGradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    .tagline-container {
-      margin-bottom: 2rem;
-    }
-
-    .tagline {
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-      color: #00d4ff;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .animated-bar {
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #5e5bff, #00d4ff);
-      border-radius: 2px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .animated-bar::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      animation: shimmer 2s infinite;
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .intro-text {
-      font-size: clamp(1rem, 1.8vw, 1.3rem);
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      max-width: 90%;
-    }
-
-    .online-links {
-      margin: 2.5rem 0;
-    }
-
-    .online-links strong {
-      color: white;
-      font-size: 1.1rem;
-      display: block;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .online-links > div {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .online-links a {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(94, 91, 255, 0.3);
-      border-radius: 30px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(10px);
-    }
-
-    .online-links a:hover {
-      background: rgba(94, 91, 255, 0.15);
-      border-color: #5e5bff;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(94, 91, 255, 0.2);
-    }
-
-    .online-links a img {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-    }
-
-    .header-cta {
-      display: flex;
-      gap: 1.5rem;
-      margin: 3rem 0 2rem 0;
-    }
-
-    .primary-btn, .secondary-btn {
-      padding: 16px 32px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 2px solid transparent;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .primary-btn {
-      background: linear-gradient(135deg, #5e5bff, #00d4ff);
-      color: white;
-    }
-
-    .primary-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .primary-btn:hover::before {
-      left: 100%;
-    }
-
-    .primary-btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(94, 91, 255, 0.4);
-    }
-
-    .secondary-btn {
-      background: transparent;
-      color: white;
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .secondary-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.6);
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .tech-badge {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .tech-badge:hover {
-      background: rgba(94, 91, 255, 0.15);
-      border-color: rgba(94, 91, 255, 0.5);
-      transform: translateY(-2px);
-    }
-
-    .profile-image {
-      justify-self: end;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 2vw;
-    }
-
-    .image-container {
-      position: relative;
-      width: clamp(280px, 25vw, 400px);
-      height: clamp(280px, 25vw, 400px);
-    }
-
-    .hexagon-border {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: conic-gradient(from 0deg, #5e5bff, #00d4ff, #5e5bff, #00d4ff, #5e5bff);
-      border-radius: 50%;
-      animation: rotate 15s linear infinite;
-      padding: 6px;
-    }
-
-    .hexagon-border::after {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 6px;
-      right: 6px;
-      bottom: 6px;
-      background: #0a0a0a;
-      border-radius: 50%;
-    }
-
-    .profile-pic {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      width: calc(100% - 36px);
-      height: calc(100% - 36px);
-      border-radius: 50%;
-      object-fit: cover;
-      z-index: 1;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      opacity: 0.7;
-    }
-
-    .mouse {
-      width: 28px;
-      height: 45px;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      border-radius: 18px;
-      position: relative;
-      margin: 0 auto 12px;
-    }
-
-    .wheel {
-      width: 4px;
-      height: 12px;
-      background: rgba(94, 91, 255, 0.8);
-      margin: 8px auto;
-      border-radius: 2px;
-      animation: scroll 2.5s infinite;
-    }
-
-    @keyframes scroll {
-      0% { opacity: 0; transform: translateY(-12px); }
-      50% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(12px); }
-    }
-
-    .arrow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .arrow span {
-      width: 20px;
-      height: 20px;
-      border-bottom: 2px solid rgba(94, 91, 255, 0.6);
-      border-right: 2px solid rgba(94, 91, 255, 0.6);
-      transform: rotate(45deg);
-      margin: -8px;
-      animation: bounce 2.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translateY(0); }
-      40% { transform: rotate(45deg) translateY(-12px); }
-      60% { transform: rotate(45deg) translateY(-6px); }
-    }
-
-    /* Section Styles */
+    /* Reduce section gaps */
     .section {
-      padding: 60px 0;
-      position: relative;
+      padding: 40px 0 !important;
+    }
+
+    .section:first-of-type {
+      padding-top: 60px !important;
     }
 
     .section-header {
-      text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 30px !important;
     }
 
-    .section-header h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #ffffff, #5e5bff, #00d4ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* Ensure hero section maintains proper spacing */
+    #home {
+      padding: 80px 0 60px 0;
     }
 
-    .section-line {
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, #5e5bff, #00d4ff);
-      margin: 0 auto;
-      border-radius: 2px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section-line::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-      animation: shimmer 3s infinite;
-    }
-
-    /* Content Sections */
-    .about-content, .projects-grid, .timeline, .publications-list, .skills-categories {
-      padding: 0 3vw;
-      max-width: 100%;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1400px) {
-      .profile-header {
-        gap: 6vw;
-      }
-    }
-
-    @media (max-width: 1200px) {
-      .profile-header {
-        grid-template-columns: 1fr 350px;
-        gap: 5vw;
-      }
-      
-      .nav-links {
-        gap: 2vw;
-      }
-    }
-
-    @media (max-width: 968px) {
-      .nav-links {
-        display: none;
-      }
-      
-      .hamburger {
-        display: flex;
-      }
-      
-      .profile-header {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3rem;
-        padding: 0 4vw;
-      }
-      
-      .profile-text {
-        order: 2;
-        justify-self: center;
-        padding-right: 0;
-      }
-      
-      .profile-image {
-        order: 1;
-        justify-self: center;
-        padding-left: 0;
-      }
-      
-      .header-cta {
-        justify-content: center;
-      }
-
-      .online-links > div {
-        justify-content: center;
-      }
-    }
-
+    /* Responsive adjustments for background */
     @media (max-width: 768px) {
-      .navbar .container {
-        padding: 0 4vw;
+      .hero-background img {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        margin: 10px;
+        border-radius: 15px;
       }
-      
-      .profile-header {
-        padding: 0 5vw;
-      }
-      
-      .header-cta {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-      }
-      
-      .primary-btn, .secondary-btn {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-      }
-      
-      .online-links > div {
-        justify-content: center;
-        gap: 0.8rem;
-      }
-
-      .online-links a {
-        padding: 10px 14px;
-        font-size: 0.85rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 4vw;
-      }
-      
-      .profile-header {
-        padding: 0 6vw;
-      }
-      
-      .intro-text {
-        max-width: 100%;
-      }
-    }
-
-    /* Placeholder styles for sections */
-    .about, .projects, .education, .experience, .publications, .skills {
-      background: rgba(255, 255, 255, 0.02);
-      margin: 2rem 1vw;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-    }
-
-    .about-content, .projects-grid, .timeline, .publications-list, .skills-categories {
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.7;
-      padding: 3rem;
     }
   </style>
 </head>
 <body>
+  <!-- Space background with particles -->
   <div id="particles-js" class="particles-background"></div>
   
-  <nav class="navbar" id="navbar">
+  <!-- Navigation -->
+  <nav class="navbar">
     <div class="container">
       <div class="logo">SSC</div>
       <ul class="nav-links">
@@ -680,7 +91,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -688,12 +99,14 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <header id="home">
+    <!-- Background Image -->
     <div class="hero-background">
       <img src="https://raw.githubusercontent.com/Sjschhabra/Sjschhabra.github.io/refs/heads/main/images/Sameer_robot.jpg" alt="Robot Background">
     </div>
     
-    <div class="container-wide">
+    <div class="container">
       <div class="profile-header">
         <div class="profile-text">
           <h1 class="glitch" data-text="Sameerjeet Singh Chhabra">Sameerjeet Singh Chhabra</h1>
@@ -705,26 +118,107 @@
             Building intelligent systems that bridge the gap between theory and application.
           </p>
           
-          <div class="online-links">
-            <strong>Find Me Online:</strong>
-            <div>
-              <a href="https://www.youtube.com/@elusiveastra" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube"> YouTube
-              </a>
-              <a href="https://grabcad.com/sameerjeet.singh.chhabra-2" target="_blank">
-                <img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/8c74f009d61f6734efaa5024d2ee9b64/large.jpg" alt="GrabCAD"> GrabCAD
-              </a>
-              <a href="https://www.linkedin.com/in/sameerjeet-singh-chhabra-8616021a9/" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZidUnZyUIrfRqLFbj3tXobgtITZ8L5y8aX5XMeKzpsCcwRxWhRd_GzM_YcMxEM0Uiqlo&usqp=CAU" alt="LinkedIn"> LinkedIn
-              </a>
-              <a href="https://github.com/Sjschhabra" target="_blank">
-                <img src="https://as1.ftcdn.net/v2/jpg/04/52/18/48/1000_F_452184858_iZXfI1h2BdKB5i9cDwpu9Ue1il8Mxxfq.jpg" alt="GitHub"> GitHub
-              </a>
-              <a href="https://soundcloud.com/sameerjeet_singh_chhabra" target="_blank">
-                <img src="https://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png" alt="SoundCloud"> SoundCloud
-              </a>
-            </div>
-          </div>
+<div class="online-links" style="margin-top: 20px;">
+  <strong style="color: white; font-size: 1rem;">Find Me Online:</strong>
+  <br>
+  <div style="
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  ">
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@elusiveastra" target="_blank" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #5e5bff;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"
+           alt="YouTube" style="width: 24px; height: 24px; border-radius: 50%;"> YouTube
+    </a>
+
+    <!-- GrabCAD -->
+    <a href="https://grabcad.com/sameerjeet.singh.chhabra-2" target="_blank" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #5e5bff;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    ">
+      <img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/8c74f009d61f6734efaa5024d2ee9b64/large.jpg"
+           alt="GrabCAD" style="width: 24px; height: 24px; border-radius: 50%;"> GrabCAD
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/sameerjeet-singh-chhabra-8616021a9/" target="_blank" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #5e5bff;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZidUnZyUIrfRqLFbj3tXobgtITZ8L5y8aX5XMeKzpsCcwRxWhRd_GzM_YcMxEM0Uiqlo&usqp=CAU"
+           alt="LinkedIn" style="width: 24px; height: 24px; border-radius: 54%;"> LinkedIn
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/Sjschhabra" target="_blank" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #5e5bff;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    ">
+      <img src="https://as1.ftcdn.net/v2/jpg/04/52/18/48/1000_F_452184858_iZXfI1h2BdKB5i9cDwpu9Ue1il8Mxxfq.jpg"
+           alt="GitHub" style="width: 24px; height: 24px; border-radius: 54%;"> GitHub
+    </a>
+
+    <!-- SoundCloud -->
+    <a href="https://soundcloud.com/sameerjeet_singh_chhabra" target="_blank" style="
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #5e5bff;
+      border-radius: 9999px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    ">
+      <img src="https://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png"
+           alt="SoundCloud" style="width: 24px; height: 24px; border-radius: 54%;"> SoundCloud
+    </a>
+    
+  </div>
+</div>
+
+          
+          <!-- Line gap after this section -->
+          <div style="margin-top: 30px;"></div>
+
 
           <div class="header-cta">
             <a href="#contact" class="primary-btn">Contact Me</a>
@@ -757,6 +251,7 @@
     </div>
   </header>
   
+  <!-- About Section -->
   <section id="about" class="about section">
     <div class="container">
       <div class="section-header">
@@ -764,23 +259,249 @@
         <div class="section-line"></div>
       </div>
       <div class="about-content">
-        <p>Your comprehensive about section content will be displayed here with improved spacing and full-width utilization...</p>
+        <div class="about-text">
+          <p>I'm a <span class="highlight">Robotics and Automation Engineer</span> with a bachelor's degree in mechanical engineering and currently pursuing my master's in Robotics and Automation Engineering with a concentration in Systems Engineering at Arizona State University.</p>
+          
+          <p>My expertise lies in developing intelligent robotic systems, implementing computer vision solutions, and creating machine learning models for automation. I thrive in multidisciplinary environments where I can apply my technical knowledge to solve complex engineering challenges.</p>
+
+          <div class="coursework-section" style="margin: 20px 0; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; border-left: 4px solid #5e5bff;">
+            <h4 style="color: #5e5bff; margin-bottom: 15px;">Current Master's Coursework (GPA: 3.94/4.0)</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
+              <div>
+                <strong style="color: white;">Completed Courses:</strong>
+                <ul style="margin: 8px 0; padding-left: 20px; color: #ccc;">
+                  <li>Applied Linear Algebra for EGR (A-)</li>
+                  <li>Mechatronic Systems (A)</li>
+                  <li>Robotic Systems I (A)</li>
+                  <li>Mechatronics Device Innovation (A+)</li>
+                  <li>Robotic Systems II (A)</li>
+                  <li>Experimental & Deployment of Robotic Systems (A-)</li>
+                </ul>
+              </div>
+              <div>
+                <strong style="color: white;">Currently Enrolled (Fall 2025):</strong>
+                <ul style="margin: 8px 0; padding-left: 20px; color: #ccc;">
+                  <li>Additive Manufacturing</li>
+                  <li>Industrial Internet of Things</li>
+                  <li>Foldable Robotics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <p>Outside of my technical work, I enjoy participating in hackathons, mentoring junior engineers, and staying current with the latest advancements in robotics and AI. I'm passionate about creating technology that makes a positive impact on society.</p>
+          
+          <div class="personal-info">
+            <div class="info-item">
+              <span class="info-title">Email:</span>
+              <span class="info-detail">schhab18@asu.edu</span>
+            </div>
+            <div class="info-item">
+              <span class="info-title">LinkedIn:</span>
+              <span class="info-detail"><a href="https://linkedin.com/in/sameerjeet-singh-chhabra-8616021a9" target="_blank">sameerjeet-singh-chhabra-8616021a9</a></span>
+            </div>
+            <div class="info-item">
+              <span class="info-title">GitHub:</span>
+              <span class="info-detail"><a href="https://github.com/sjschhabra" target="_blank">github.com/sjschhabra</a></span>
+            </div>
+          </div>
+          
+          <div class="download-resume">
+            <a href="https://raw.githubusercontent.com/Sjschhabra/Sjschhabra.github.io/main/assets/Sameerjeet_09251.pdf"
+               class="download-btn" download target="_blank">
+              Download Resume <i class="download-icon"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Projects Section - Moved after About -->
   <section id="projects" class="projects section">
     <div class="container">
       <div class="section-header">
         <h2>Featured Projects</h2>
         <div class="section-line"></div>
       </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="robotics">Robotics</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+      </div>
       <div class="projects-grid">
-        <p>Your enhanced projects grid will be displayed here with better space utilization...</p>
+
+        <!-- Project Cards -->
+        
+  <!-- Project 1 -->
+  <div class="project-card" data-categories="robotics automation">
+  <div class="project-image">
+    <img src="images/Eleven_model.png" alt="Eleven">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://sjschhabra.github.io/project-eleven.github.io/" class="project-link" target="_blank">Webstie</a>
+        <a href="https://www.youtube.com/" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Project 11</h3>
+    <p>A cutting-edge robotic quadruped inspired by natural locomotion. (Coming August '25)</p>
+    <div class="project-tags">
+      <span class="tag">ROS2</span>
+      <span class="tag">Reinforcement Learning</span>
+      <span class="tag">Quadruped</span>
+      <span class="tag">MuJoCo</span>
+      <span class="tag">Control System</span>
+    </div>
+  </div>
+  </div>
+
+        
+  <div class="project-card" data-categories="robotics automation">
+  <div class="project-image">
+    <img src="images/LineTracking.png" alt="UAV Line Tracking">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/UAV-Dynamic-Landing-Line-Tracking" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/watch?v=YCd7i0CGpko" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>UAV Dynamic Landing - Line Tracking</h3>
+    <p>Dynamic vision-based UAV landing system using real-time line tracking.</p>
+    <div class="project-tags">
+      <span class="tag">Drone</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">MatLab Simulink</span>
+      <span class="tag">Control System</span>
+    </div>
+  </div>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="project-card" data-categories="automation ml">
+  <div class="project-image">
+    <img src="images/Open-Seq-Me-Presentation9.png" alt="Open Seq Me">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/Open-Seq-Me-Automated-Flow-Cell-Handling" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/watch?v=t-1RJgOwyxU" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Open-Seq-Me: Los Alamos National Laboratory Engineering Challenge</h3>
+    <p>Hackathon-winning automation project for handling sequencing devices.</p>
+    <div class="project-tags">
+      <span class="tag">Unpackaging</span>
+      <span class="tag">Hackathon</span>
+      <span class="tag">Factory Automation</span>
+      <span class="tag">Open Source</span>
+    </div>
+  </div>
+  </div>
+
+        
+  <!-- Project 2 -->
+  <div class="project-card" data-categories="robotics automation">
+  <div class="project-image">
+    <img src="images/Mobile-Manipulator-Turtlebot-Mycobot9.png" alt="Voice Operated Robot">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/Voice-Operated-Mobile-Manipulator-Turtlebot-Mycobot" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/shorts/IgkybFqdJZs" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Voice Operated Mobile Manipulator</h3>
+    <p>Voice-controlled integration of TurtleBot and MyCobot for intelligent mobile manipulation.</p>
+    <div class="project-tags">
+      <span class="tag">Voice Control</span>
+      <span class="tag">ROS</span>
+      <span class="tag">Turtlebot</span>
+      <span class="tag">Robotic Manipulator</span>
+    </div>
+  </div>
+  </div>
+
+  <!-- Project 3 -->
+  <div class="project-card" data-categories="robotics automation">
+  <div class="project-image">
+    <img src="images/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications.png" alt="Cable Robot">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/watch?v=ES8Zl3j1rvY" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Cable-Suspended Parallel Robot</h3>
+    <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications.</p>
+    <div class="project-tags">
+      <span class="tag">Precision Farming</span>
+      <span class="tag">Parallel Robotics</span>
+      <span class="tag">Inverese Kinematics</span>
+    </div>
+  </div>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="project-card" data-categories="robotics ml">
+  <div class="project-image">
+    <img src="images/Maze-Solving-6-DOF-Robotic-Arm.png" alt="Maze Solving Robot Arm">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com/watch?v=8pNSNreSBco" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Maze Solving 6-DOF Robotic Arm</h3>
+    <p>Autonomous robotic arm using IK and CV to solve physical mazes.</p>
+    <div class="project-tags">
+      <span class="tag">6-DOF Robotic Manipulator</span>
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Mapping</span>
+      <span class="tag">Inverse Kinematics</span>
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Project 6 -->
+  <div class="project-card" data-categories="ml">
+  <div class="project-image">
+    <img src="images/Human Activity Recognition using Smartphones - Machine Learning.png" alt="Activity Recognition">
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href="https://github.com/Sjschhabra/Activity-Recognition-ML" class="project-link" target="_blank">GitHub</a>
+        <a href="https://www.youtube.com" class="project-link" target="_blank">YouTube</a>
+      </div>
+    </div>
+  </div>
+  <div class="project-info">
+    <h3>Human Activity Recognition</h3>
+    <p>Smartphone sensor-based classification of human physical activities using ML.</p>
+    <div class="project-tags">
+      <span class="tag">Sensors</span>
+      <span class="tag">ML</span>
+      <span class="tag">Classification</span>
+    </div>
+  </div>
+  </div>
+
+
       </div>
     </div>
   </section>
 
+  <!-- Education Section -->
   <section id="education" class="education section">
     <div class="container">
       <div class="section-header">
@@ -788,11 +509,50 @@
         <div class="section-line"></div>
       </div>
       <div class="timeline">
-        <p>Your education timeline with enhanced spacing...</p>
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">MS</div>
+          </div>
+          <div class="timeline-content reveal-right">
+            <div class="timeline-date">2024 - 2026</div>
+            <h3 class="timeline-title">Master of Science in Robotics and Automation Engineering</h3>
+            <h4 class="timeline-subtitle">Arizona State University, USA</h4>
+            <p class="timeline-description">
+              Concentration in Systems Engineering<br>
+              GPA: 3.94/4.0
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Robotics</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Systems Engineering</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">BTech</div>
+          </div>
+          <div class="timeline-content reveal-left">
+            <div class="timeline-date">2018 - 2022</div>
+            <h3 class="timeline-title">Bachelor of Technology in Mechanical Engineering</h3>
+            <h4 class="timeline-subtitle">Chhattisgarh Swami Vivekanand Technical University, India</h4>
+            <p class="timeline-description">
+              GPA: 8.73/10.00
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Mechanical Design</span>
+              <span class="tag">Robotics</span>
+              <span class="tag">Engineering Fundamentals</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Experience Section -->
   <section id="experience" class="experience section">
     <div class="container">
       <div class="section-header">
@@ -800,105 +560,137 @@
         <div class="section-line"></div>
       </div>
       <div class="timeline">
-        <p>Your professional experience with improved layout...</p>
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">ASU</div>
+          </div>
+          <div class="timeline-content reveal-right">
+            <div class="timeline-date">January 2025 - Present</div>
+            <h3 class="timeline-title">Teaching Aide</h3>
+            <h4 class="timeline-subtitle">Department of Physics, Arizona State University, Tempe AZ USA</h4>
+            <ul class="timeline-list">
+              <li>Currently working as a Physics Teaching Aide, managing 48 students, conducting undergraduate lab experiments</li>
+              <li>Assisting students with core physics concepts, guiding them through procedures, and ensuring accurate data collection and analysis.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <div class="icon-content">AI</div>
+          </div>
+          <div class="timeline-content reveal-left">
+            <div class="timeline-date">July 2023 - March 2024</div>
+            <h3 class="timeline-title">Data Scientist</h3>
+            <h4 class="timeline-subtitle">ANYTHINGAI Cyber Pvt. Ltd, Hyderabad, India</h4>
+            <ul class="timeline-list">
+              <li>Streamlined Data Extraction: Cut down web data extraction time by 98% leveraging Selenium, BeautifulSoup, and APIs</li>
+              <li>Data Analysis and Insights: Analyzed data from 10+ decentralized exchanges. Improved predictive accuracy using AutoGens</li>
+              <li>Trading Bot: Launched ML-powered trading bot on AWS, refining strategies with real-time processing and boosting profit probability by 4x</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Publications Section -->
   <section id="publications" class="publications section">
     <div class="container">
       <div class="section-header">
         <h2>Publications</h2>
         <div class="section-line"></div>
       </div>
+      
       <div class="publications-list">
-        <p>Your publications with enhanced presentation...</p>
+        <div class="publication-item">
+          <div class="publication-icon">
+            <i class="publication-icon-img"></i>
+          </div>
+          <div class="publication-content">
+            <h3 class="publication-title">Design and Inverse Kinematics Analysis of Cable-Suspended Parallel Robot FarmPet for Agricultural Application</h3>
+            <p class="publication-journal">International Journal for Research in Applied Science & Engineering Technology (IJRASET)</p>
+            <p class="publication-date">February 2023</p>
+            <p class="publication-abstract">
+              This paper presents the design and kinematic analysis of a novel cable-suspended parallel robot for agricultural applications.
+              The proposed system offers high precision at low cost, making advanced farming techniques accessible to small-scale farmers.
+            </p>
+            <div class="publication-links">
+              <a href="https://www.ijraset.com/research-paper/design-and-inverse-kinematics-analysis-of-cable-suspended-parallel-robot" 
+                 class="publication-link" 
+                 target="_blank">
+                View Paper
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
+  
+  <!-- Skills Section -->
   <section id="skills" class="skills section">
     <div class="container">
       <div class="section-header">
         <h2>Skills & Technologies</h2>
         <div class="section-line"></div>
       </div>
+      
       <div class="skills-categories">
-        <p>Your skills section with better space utilization...</p>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    // Enhanced navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Mobile menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger?.addEventListener('click', function() {
-      navLinks?.classList.toggle('mobile-active');
-      hamburger.classList.toggle('active');
-    });
-
-    // Enhanced smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offsetTop = target.offsetTop - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-
-    // Enhanced particles configuration
-    if (typeof particlesJS !== 'undefined') {
-      particlesJS("particles-js", {
-        "particles": {
-          "number": {
-            "value": 100,
-            "density": {
-              "enable": true,
-              "value_area": 1000
-            }
-          },
-          "color": {
-            "value": ["#5e5bff", "#00d4ff", "#ffffff"]
-          },
-          "shape": {
-            "type": ["circle", "triangle"],
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            }
-          },
-          "opacity": {
-            "value": 0.4,
-            "random": true,
-            "anim": {
-              "enable": true,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-              "enable": true,
-              "speed": 2,
-              "size_
+        <div class="skill-category">
+          <h3>Programming & Development</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-python"></i></div>
+              <div class="skill-info">
+                <h4>Python</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-cpp"></i></div>
+              <div class="skill-info">
+                <h4>C++</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-matlab"></i></div>
+              <div class="skill-info">
+                <h4>MATLAB</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-ros"></i></div>
+              <div class="skill-info">
+                <h4>ROS/ROS2</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Robotics & AI</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-cv"></i></div>
+              <div class="skill-info">
+                <h4>Computer Vision</h4>
+                <div class="skill-bar">
+                  <div class="skill-level" data-level="90"></div>
+                </div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon"><i class="skill-ml"></i></div>
