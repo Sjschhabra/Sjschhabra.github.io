@@ -8,17 +8,38 @@
   <!-- Favicon for browser tab -->
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Sjschhabra/Sjschhabra.github.io/refs/heads/main/images/Sameerjeet%20SIngh%20CHhabra%20(1)%20new.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
   <style>
-    /* Custom styles for background image and reduced gaps */
+    /* Global improvements for full-width utilization */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Container adjustments for full-width utilization */
+    .container {
+      max-width: 95% !important;
+      margin: 0 auto !important;
+      padding: 0 2vw !important;
+    }
+
+    /* Hero section improvements */
     #home {
       position: relative;
       overflow: hidden;
+      min-height: 100vh;
+      padding: 60px 0 40px 0 !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
     }
 
     .hero-background {
@@ -30,46 +51,382 @@
       z-index: -1;
     }
 
-    .profile-image {
-      margin-left: 60px;
-    }
-
     .hero-background img {
-      width: calc(100% - 40px);
-      height: calc(100% - 40px);
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
       object-fit: cover;
-      object-position: center;
-      margin: 20px;
-      border-radius: 20px;
-      opacity: 0.5;
-      filter: blur(3px);
+      object-position: center top;
+      margin: 10px;
+      border-radius: 25px;
+      opacity: 0.25;
+      filter: blur(2px);
     }
 
-    /* Reduce section gaps */
+    /* Profile header full-width styling */
+    .profile-header {
+      display: grid !important;
+      grid-template-columns: 1fr auto !important;
+      gap: 4vw !important;
+      align-items: center !important;
+      width: 100% !important;
+      min-height: 80vh !important;
+    }
+
+    .profile-text {
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .profile-text h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem) !important;
+      font-weight: 900 !important;
+      line-height: 0.9 !important;
+      margin-bottom: 1rem !important;
+      background: linear-gradient(135deg, #fff 0%, #5e5bff 50%, #ff6b6b 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+
+    .tagline {
+      font-size: clamp(1.2rem, 3vw, 1.8rem) !important;
+      font-weight: 600 !important;
+      color: #5e5bff !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .intro-text {
+      font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+      line-height: 1.6 !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+      margin-bottom: 2rem !important;
+      max-width: 600px !important;
+    }
+
+    .profile-image {
+      margin-left: auto !important;
+      margin-right: 0 !important;
+      position: relative !important;
+    }
+
+    .image-container {
+      position: relative !important;
+      width: clamp(280px, 25vw, 400px) !important;
+      height: clamp(280px, 25vw, 400px) !important;
+    }
+
+    /* Enhanced online links styling */
+    .online-links {
+      margin: 2rem 0 !important;
+      padding: 2rem 0 !important;
+      border-top: 1px solid rgba(94, 91, 255, 0.3) !important;
+      border-bottom: 1px solid rgba(94, 91, 255, 0.3) !important;
+    }
+
+    .online-links strong {
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      color: #5e5bff !important;
+    }
+
+    .online-links > div:last-child {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 1rem !important;
+      margin-top: 1rem !important;
+    }
+
+    .online-links a {
+      padding: 0.8rem 1.2rem !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.2), rgba(94, 91, 255, 0.1)) !important;
+      border: 1px solid rgba(94, 91, 255, 0.4) !important;
+      border-radius: 50px !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      backdrop-filter: blur(10px) !important;
+      font-weight: 600 !important;
+    }
+
+    .online-links a:hover {
+      transform: translateY(-2px) !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.4), rgba(94, 91, 255, 0.2)) !important;
+      box-shadow: 0 10px 30px rgba(94, 91, 255, 0.3) !important;
+    }
+
+    /* Enhanced CTA buttons */
+    .header-cta {
+      display: flex !important;
+      gap: 1.5rem !important;
+      margin: 2.5rem 0 !important;
+      flex-wrap: wrap !important;
+    }
+
+    .primary-btn, .secondary-btn {
+      padding: 1rem 2.5rem !important;
+      font-size: 1.1rem !important;
+      font-weight: 700 !important;
+      border-radius: 50px !important;
+      text-decoration: none !important;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, #5e5bff, #ff6b6b) !important;
+      color: white !important;
+      box-shadow: 0 10px 30px rgba(94, 91, 255, 0.4) !important;
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 20px 40px rgba(94, 91, 255, 0.6) !important;
+    }
+
+    .secondary-btn {
+      background: transparent !important;
+      color: white !important;
+      border: 2px solid rgba(255, 255, 255, 0.3) !important;
+      backdrop-filter: blur(10px) !important;
+    }
+
+    .secondary-btn:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-color: rgba(255, 255, 255, 0.6) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Tech stack enhancement */
+    .tech-stack {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 1rem !important;
+      margin-top: 2rem !important;
+    }
+
+    .tech-badge {
+      padding: 0.6rem 1.2rem !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.2), rgba(255, 107, 107, 0.2)) !important;
+      border: 1px solid rgba(94, 91, 255, 0.3) !important;
+      border-radius: 25px !important;
+      color: white !important;
+      font-weight: 600 !important;
+      font-size: 0.9rem !important;
+      backdrop-filter: blur(10px) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .tech-badge:hover {
+      transform: translateY(-2px) !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.4), rgba(255, 107, 107, 0.4)) !important;
+      box-shadow: 0 8px 25px rgba(94, 91, 255, 0.3) !important;
+    }
+
+    /* Sections full-width optimization */
     .section {
-      padding: 40px 0 !important;
+      padding: 3rem 0 !important;
+      width: 100% !important;
     }
 
     .section:first-of-type {
-      padding-top: 60px !important;
+      padding-top: 4rem !important;
     }
 
     .section-header {
-      margin-bottom: 30px !important;
+      margin-bottom: 2.5rem !important;
+      text-align: center !important;
     }
 
-    /* Ensure hero section maintains proper spacing */
-    #home {
-      padding: 80px 0 60px 0;
+    .section-header h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem) !important;
+      font-weight: 800 !important;
+      background: linear-gradient(135deg, #fff 0%, #5e5bff 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      margin-bottom: 1rem !important;
     }
 
-    /* Responsive adjustments for background */
+    /* Enhanced about section */
+    .about-content {
+      width: 100% !important;
+    }
+
+    .about-text {
+      width: 100% !important;
+      max-width: none !important;
+    }
+
+    .about-text p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem) !important;
+      line-height: 1.7 !important;
+      margin-bottom: 1.5rem !important;
+      color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    /* Coursework section enhancement */
+    .coursework-section {
+      margin: 2rem 0 !important;
+      padding: 2rem !important;
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.1), rgba(255, 107, 107, 0.05)) !important;
+      border-radius: 20px !important;
+      border: 1px solid rgba(94, 91, 255, 0.2) !important;
+      backdrop-filter: blur(20px) !important;
+      box-shadow: 0 10px 40px rgba(94, 91, 255, 0.1) !important;
+    }
+
+    /* Projects grid enhancement */
+    .projects-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+      gap: 2rem !important;
+      margin-top: 2rem !important;
+      width: 100% !important;
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, rgba(94, 91, 255, 0.1), rgba(255, 255, 255, 0.05)) !important;
+      border: 1px solid rgba(94, 91, 255, 0.2) !important;
+      border-radius: 20px !important;
+      overflow: hidden !important;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      backdrop-filter: blur(20px) !important;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 20px 60px rgba(94, 91, 255, 0.3) !important;
+      border-color: rgba(94, 91, 255, 0.5) !important;
+    }
+
+    /* Enhanced filter buttons */
+    .project-filters {
+      display: flex !important;
+      justify-content: center !important;
+      flex-wrap: wrap !important;
+      gap: 1rem !important;
+      margin-bottom: 3rem !important;
+    }
+
+    .filter-btn {
+      padding: 0.8rem 2rem !important;
+      background: transparent !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+      border: 2px solid rgba(94, 91, 255, 0.3) !important;
+      border-radius: 50px !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: linear-gradient(135deg, #5e5bff, #ff6b6b) !important;
+      color: white !important;
+      border-color: transparent !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 10px 30px rgba(94, 91, 255, 0.4) !important;
+    }
+
+    /* Scroll indicator enhancement */
+    .scroll-indicator {
+      position: absolute !important;
+      bottom: 2rem !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      animation: bounce 2s infinite !important;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      .profile-header {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+        text-align: center !important;
+      }
+
+      .profile-image {
+        margin: 0 auto !important;
+      }
+
+      .online-links > div:last-child {
+        justify-content: center !important;
+      }
+
+      .header-cta {
+        justify-content: center !important;
+      }
+    }
+
     @media (max-width: 768px) {
+      .container {
+        max-width: 98% !important;
+        padding: 0 1rem !important;
+      }
+
       .hero-background img {
-        width: calc(100% - 20px);
-        height: calc(100% - 20px);
-        margin: 10px;
-        border-radius: 15px;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        margin: 5px;
+        border-radius: 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .coursework-section {
+        padding: 1.5rem !important;
+      }
+
+      .coursework-section > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Additional modern enhancements */
+    .glitch {
+      animation: glitch 2s linear infinite !important;
+    }
+
+    @keyframes glitch {
+      2%, 64% {
+        transform: translate(2px, 0) skew(0deg);
+      }
+      4%, 60% {
+        transform: translate(-2px, 0) skew(0deg);
+      }
+      62% {
+        transform: translate(0, 0) skew(5deg); 
+      }
+    }
+
+    .animated-bar {
+      height: 4px !important;
+      background: linear-gradient(90deg, #5e5bff, #ff6b6b, #5e5bff) !important;
+      border-radius: 2px !important;
+      margin: 1rem 0 !important;
+      animation: shimmer 2s ease-in-out infinite alternate !important;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
       }
     }
   </style>
@@ -118,107 +475,40 @@
             Building intelligent systems that bridge the gap between theory and application.
           </p>
           
-<div class="online-links" style="margin-top: 20px;">
-  <strong style="color: white; font-size: 1rem;">Find Me Online:</strong>
-  <br>
-  <div style="
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  ">
+<div class="online-links">
+  <strong>Find Me Online:</strong>
+  <div>
     <!-- YouTube -->
-    <a href="https://www.youtube.com/@elusiveastra" target="_blank" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #5e5bff;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    ">
+    <a href="https://www.youtube.com/@elusiveastra" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"
            alt="YouTube" style="width: 24px; height: 24px; border-radius: 50%;"> YouTube
     </a>
 
     <!-- GrabCAD -->
-    <a href="https://grabcad.com/sameerjeet.singh.chhabra-2" target="_blank" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #5e5bff;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    ">
+    <a href="https://grabcad.com/sameerjeet.singh.chhabra-2" target="_blank">
       <img src="https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/8c74f009d61f6734efaa5024d2ee9b64/large.jpg"
            alt="GrabCAD" style="width: 24px; height: 24px; border-radius: 50%;"> GrabCAD
     </a>
 
     <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/sameerjeet-singh-chhabra-8616021a9/" target="_blank" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #5e5bff;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    ">
+    <a href="https://www.linkedin.com/in/sameerjeet-singh-chhabra-8616021a9/" target="_blank">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZidUnZyUIrfRqLFbj3tXobgtITZ8L5y8aX5XMeKzpsCcwRxWhRd_GzM_YcMxEM0Uiqlo&usqp=CAU"
            alt="LinkedIn" style="width: 24px; height: 24px; border-radius: 54%;"> LinkedIn
     </a>
 
     <!-- GitHub -->
-    <a href="https://github.com/Sjschhabra" target="_blank" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #5e5bff;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    ">
+    <a href="https://github.com/Sjschhabra" target="_blank">
       <img src="https://as1.ftcdn.net/v2/jpg/04/52/18/48/1000_F_452184858_iZXfI1h2BdKB5i9cDwpu9Ue1il8Mxxfq.jpg"
            alt="GitHub" style="width: 24px; height: 24px; border-radius: 54%;"> GitHub
     </a>
 
     <!-- SoundCloud -->
-    <a href="https://soundcloud.com/sameerjeet_singh_chhabra" target="_blank" style="
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #5e5bff;
-      border-radius: 9999px;
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-    ">
+    <a href="https://soundcloud.com/sameerjeet_singh_chhabra" target="_blank">
       <img src="https://icons.iconarchive.com/icons/danleech/simple/256/soundcloud-icon.png"
            alt="SoundCloud" style="width: 24px; height: 24px; border-radius: 54%;"> SoundCloud
     </a>
-    
   </div>
 </div>
-
-          
-          <!-- Line gap after this section -->
-          <div style="margin-top: 30px;"></div>
-
 
           <div class="header-cta">
             <a href="#contact" class="primary-btn">Contact Me</a>
@@ -264,11 +554,11 @@
           
           <p>My expertise lies in developing intelligent robotic systems, implementing computer vision solutions, and creating machine learning models for automation. I thrive in multidisciplinary environments where I can apply my technical knowledge to solve complex engineering challenges.</p>
 
-          <div class="coursework-section" style="margin: 20px 0; padding: 20px; background: rgba(255, 255, 255, 0.05); border-radius: 10px; border-left: 4px solid #5e5bff;">
-            <h4 style="color: #5e5bff; margin-bottom: 15px;">Current Master's Coursework (GPA: 3.94/4.0)</h4>
+          <div class="coursework-section">
+            <h4 style="color: #5e5bff; margin-bottom: 15px; font-size: 1.5rem; font-weight: 700;">Current Master's Coursework (GPA: 3.94/4.0)</h4>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px;">
               <div>
-                <strong style="color: white;">Completed Courses:</strong>
+                <strong style="color: white; font-size: 1.1rem;">Completed Courses:</strong>
                 <ul style="margin: 8px 0; padding-left: 20px; color: #ccc;">
                   <li>Applied Linear Algebra for EGR (A-)</li>
                   <li>Mechatronic Systems (A)</li>
@@ -279,7 +569,7 @@
                 </ul>
               </div>
               <div>
-                <strong style="color: white;">Currently Enrolled (Fall 2025):</strong>
+                <strong style="color: white; font-size: 1.1rem;">Currently Enrolled (Fall 2025):</strong>
                 <ul style="margin: 8px 0; padding-left: 20px; color: #ccc;">
                   <li>Additive Manufacturing</li>
                   <li>Industrial Internet of Things</li>
@@ -340,7 +630,7 @@
     <img src="images/Eleven_model.png" alt="Eleven">
     <div class="project-overlay">
       <div class="project-links">
-        <a href="https://sjschhabra.github.io/project-eleven.github.io/" class="project-link" target="_blank">Webstie</a>
+        <a href="https://sjschhabra.github.io/project-eleven.github.io/" class="project-link" target="_blank">Website</a>
         <a href="https://www.youtube.com/" class="project-link" target="_blank">YouTube</a>
       </div>
     </div>
@@ -397,300 +687,4 @@
     <p>Hackathon-winning automation project for handling sequencing devices.</p>
     <div class="project-tags">
       <span class="tag">Unpackaging</span>
-      <span class="tag">Hackathon</span>
-      <span class="tag">Factory Automation</span>
-      <span class="tag">Open Source</span>
-    </div>
-  </div>
-  </div>
-
-        
-  <!-- Project 2 -->
-  <div class="project-card" data-categories="robotics automation">
-  <div class="project-image">
-    <img src="images/Mobile-Manipulator-Turtlebot-Mycobot9.png" alt="Voice Operated Robot">
-    <div class="project-overlay">
-      <div class="project-links">
-        <a href="https://github.com/Sjschhabra/Voice-Operated-Mobile-Manipulator-Turtlebot-Mycobot" class="project-link" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com/shorts/IgkybFqdJZs" class="project-link" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <h3>Voice Operated Mobile Manipulator</h3>
-    <p>Voice-controlled integration of TurtleBot and MyCobot for intelligent mobile manipulation.</p>
-    <div class="project-tags">
-      <span class="tag">Voice Control</span>
-      <span class="tag">ROS</span>
-      <span class="tag">Turtlebot</span>
-      <span class="tag">Robotic Manipulator</span>
-    </div>
-  </div>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="project-card" data-categories="robotics automation">
-  <div class="project-image">
-    <img src="images/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications.png" alt="Cable Robot">
-    <div class="project-overlay">
-      <div class="project-links">
-        <a href="https://github.com/Sjschhabra/Cable-Suspened-Parallel-Robot-for-Agricultural-Applications" class="project-link" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com/watch?v=ES8Zl3j1rvY" class="project-link" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <h3>Cable-Suspended Parallel Robot</h3>
-    <p>FarmPet: A cable-driven parallel robot designed for precision agriculture applications.</p>
-    <div class="project-tags">
-      <span class="tag">Precision Farming</span>
-      <span class="tag">Parallel Robotics</span>
-      <span class="tag">Inverese Kinematics</span>
-    </div>
-  </div>
-  </div>
-
-  <!-- Project 4 -->
-  <div class="project-card" data-categories="robotics ml">
-  <div class="project-image">
-    <img src="images/Maze-Solving-6-DOF-Robotic-Arm.png" alt="Maze Solving Robot Arm">
-    <div class="project-overlay">
-      <div class="project-links">
-        <a href="https://github.com/Sjschhabra/Maze-Solving-6-DOF-Robotic-Arm" class="project-link" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com/watch?v=8pNSNreSBco" class="project-link" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <h3>Maze Solving 6-DOF Robotic Arm</h3>
-    <p>Autonomous robotic arm using IK and CV to solve physical mazes.</p>
-    <div class="project-tags">
-      <span class="tag">6-DOF Robotic Manipulator</span>
-      <span class="tag">Computer Vision</span>
-      <span class="tag">Mapping</span>
-      <span class="tag">Inverse Kinematics</span>
-    </div>
-  </div>
-  </div>
-
-
-  <!-- Project 6 -->
-  <div class="project-card" data-categories="ml">
-  <div class="project-image">
-    <img src="images/Human Activity Recognition using Smartphones - Machine Learning.png" alt="Activity Recognition">
-    <div class="project-overlay">
-      <div class="project-links">
-        <a href="https://github.com/Sjschhabra/Activity-Recognition-ML" class="project-link" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com" class="project-link" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </div>
-  <div class="project-info">
-    <h3>Human Activity Recognition</h3>
-    <p>Smartphone sensor-based classification of human physical activities using ML.</p>
-    <div class="project-tags">
-      <span class="tag">Sensors</span>
-      <span class="tag">ML</span>
-      <span class="tag">Classification</span>
-    </div>
-  </div>
-  </div>
-
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="education section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Education</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <div class="icon-content">MS</div>
-          </div>
-          <div class="timeline-content reveal-right">
-            <div class="timeline-date">2024 - 2026</div>
-            <h3 class="timeline-title">Master of Science in Robotics and Automation Engineering</h3>
-            <h4 class="timeline-subtitle">Arizona State University, USA</h4>
-            <p class="timeline-description">
-              Concentration in Systems Engineering<br>
-              GPA: 3.94/4.0
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Robotics</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">Systems Engineering</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <div class="icon-content">BTech</div>
-          </div>
-          <div class="timeline-content reveal-left">
-            <div class="timeline-date">2018 - 2022</div>
-            <h3 class="timeline-title">Bachelor of Technology in Mechanical Engineering</h3>
-            <h4 class="timeline-subtitle">Chhattisgarh Swami Vivekanand Technical University, India</h4>
-            <p class="timeline-description">
-              GPA: 8.73/10.00
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Mechanical Design</span>
-              <span class="tag">Robotics</span>
-              <span class="tag">Engineering Fundamentals</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="experience section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Professional Experience</h2>
-        <div class="section-line"></div>
-      </div>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <div class="icon-content">ASU</div>
-          </div>
-          <div class="timeline-content reveal-right">
-            <div class="timeline-date">January 2025 - Present</div>
-            <h3 class="timeline-title">Teaching Aide</h3>
-            <h4 class="timeline-subtitle">Department of Physics, Arizona State University, Tempe AZ USA</h4>
-            <ul class="timeline-list">
-              <li>Currently working as a Physics Teaching Aide, managing 48 students, conducting undergraduate lab experiments</li>
-              <li>Assisting students with core physics concepts, guiding them through procedures, and ensuring accurate data collection and analysis.</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-icon">
-            <div class="icon-content">AI</div>
-          </div>
-          <div class="timeline-content reveal-left">
-            <div class="timeline-date">July 2023 - March 2024</div>
-            <h3 class="timeline-title">Data Scientist</h3>
-            <h4 class="timeline-subtitle">ANYTHINGAI Cyber Pvt. Ltd, Hyderabad, India</h4>
-            <ul class="timeline-list">
-              <li>Streamlined Data Extraction: Cut down web data extraction time by 98% leveraging Selenium, BeautifulSoup, and APIs</li>
-              <li>Data Analysis and Insights: Analyzed data from 10+ decentralized exchanges. Improved predictive accuracy using AutoGens</li>
-              <li>Trading Bot: Launched ML-powered trading bot on AWS, refining strategies with real-time processing and boosting profit probability by 4x</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications Section -->
-  <section id="publications" class="publications section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Publications</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="publications-list">
-        <div class="publication-item">
-          <div class="publication-icon">
-            <i class="publication-icon-img"></i>
-          </div>
-          <div class="publication-content">
-            <h3 class="publication-title">Design and Inverse Kinematics Analysis of Cable-Suspended Parallel Robot FarmPet for Agricultural Application</h3>
-            <p class="publication-journal">International Journal for Research in Applied Science & Engineering Technology (IJRASET)</p>
-            <p class="publication-date">February 2023</p>
-            <p class="publication-abstract">
-              This paper presents the design and kinematic analysis of a novel cable-suspended parallel robot for agricultural applications.
-              The proposed system offers high precision at low cost, making advanced farming techniques accessible to small-scale farmers.
-            </p>
-            <div class="publication-links">
-              <a href="https://www.ijraset.com/research-paper/design-and-inverse-kinematics-analysis-of-cable-suspended-parallel-robot" 
-                 class="publication-link" 
-                 target="_blank">
-                View Paper
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Skills Section -->
-  <section id="skills" class="skills section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Skills & Technologies</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="skills-categories">
-        <div class="skill-category">
-          <h3>Programming & Development</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-python"></i></div>
-              <div class="skill-info">
-                <h4>Python</h4>
-                <div class="skill-bar">
-                  <div class="skill-level" data-level="95"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-cpp"></i></div>
-              <div class="skill-info">
-                <h4>C++</h4>
-                <div class="skill-bar">
-                  <div class="skill-level" data-level="85"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-matlab"></i></div>
-              <div class="skill-info">
-                <h4>MATLAB</h4>
-                <div class="skill-bar">
-                  <div class="skill-level" data-level="90"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-ros"></i></div>
-              <div class="skill-info">
-                <h4>ROS/ROS2</h4>
-                <div class="skill-bar">
-                  <div class="skill-level" data-level="80"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Robotics & AI</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-cv"></i></div>
-              <div class="skill-info">
-                <h4>Computer Vision</h4>
-                <div class="skill-bar">
-                  <div class="skill-level" data-level="90"></div>
-                </div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon"><i class="skill-ml"></i></div>
+      <span
