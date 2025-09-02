@@ -31,14 +31,18 @@
     }
 
     .navbar {
-      background-color: rgba(0, 0, 0, 0.4); /* black with 70% opacity */
-      backdrop-filter: blur(6px);           /* optional: adds a glass effect */
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.05),  /* left edge (almost transparent) */
+        rgba(0, 0, 0, 0.7),   /* center (more solid) */
+        rgba(0, 0, 0, 0.05)   /* right edge (almost transparent) */
+      );
+      backdrop-filter: blur(6px);           /* nice frosted-glass effect */
       -webkit-backdrop-filter: blur(6px);   /* Safari support */
-      position: fixed;                      /* keeps navbar at top */
+      position: fixed;
       width: 100%;
       z-index: 1000;
     }
-    
 
     .profile-image {
       margin-left: 60px;
